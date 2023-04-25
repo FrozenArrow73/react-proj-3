@@ -1,10 +1,10 @@
 import React from "react";
 
-const RecipeCard = () => {
+const RecipeCard = ({recipe}) => {
     return (
         <div className="recipe-card">
             <div style={{
-                backgroundImage: "url(https://thefirstyearblog.com/wp-content/uploads/2015/11/Chocolate-Chocolate-Cake-8.jpg)",
+                backgroundImage: `url(${recipe.image_url})`,
                 backgroundPosition: "center center",
                 backgroundSize: "cover",
                 height: "300px",
@@ -13,7 +13,7 @@ const RecipeCard = () => {
 
             </div>
             <div className="recipe-card-values">
-                <p className="recipe-text">Triple Chocolate Mouse Cake</p>
+                <p className="recipe-text">{recipe.recipe_name}</p>
                 <button>See More</button>
             </div>
         </div>

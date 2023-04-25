@@ -5,7 +5,7 @@ import RecipeCard from './RecipeCard'
 import {BiSearchAlt2} from "react-icons/bi"
 
 const HomeScreen = () => {  
-  const [recipes, setRecipes] = useState({})
+  const [recipes, setRecipes] = useState([])
   const [search, setSearch] = useState("")
 
   const getRecipes = () => {
@@ -19,6 +19,13 @@ const HomeScreen = () => {
     getRecipes()
   }, [])
 
+  const recipeDisplay = recipes.filter((recipe) => {
+    const lowerCaseSearch = search.toLowerCase()
+    const lowerCaseRecipe = recipe.recipe_name.toLowerCase()
+    return lowerCaseRecipe.includes(lowerCaseSearch)
+  }).map((recipe) => {
+    return <RecipeCard recipe={recipe}/>
+  })
   
   return (
     <div>
@@ -36,9 +43,7 @@ const HomeScreen = () => {
         </div>
       </div>
       <div className="recipe-card-container">
-        <RecipeCard/>
-        <RecipeCard/>
-        <RecipeCard/>
+        {recipeDisplay}
       </div>
     </div>
   )
