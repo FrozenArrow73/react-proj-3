@@ -1,6 +1,8 @@
 import React, {useEffect, useState}from 'react'
 import AdBanner from './AdBanner'
 import axios from 'axios'
+import RecipeCard from './RecipeCard'
+import {AiOutlineSearch} from "react-icons/ai"
 
 const HomeScreen = () => {  
   const [recipes, setRecipes] = useState({})
@@ -20,7 +22,21 @@ const HomeScreen = () => {
   return (
     <div>
       <AdBanner />
-      {/* Much code from Part 2 will be placed around here. Do your best! */}
+      <div className='search-section'>
+        <div className='search-bar-container'>
+          <AiOutlineSearch/>
+          <input 
+            className='search-bar'
+            type='text'
+            placeholder='Search for a Recipe'
+          />
+        </div>
+      </div>
+      <div className="recipe-card-container">
+        <RecipeCard/>
+        <RecipeCard/>
+        <RecipeCard/>
+      </div>
     </div>
   )
 }
