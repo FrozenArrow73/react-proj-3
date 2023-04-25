@@ -2,10 +2,11 @@ import React, {useEffect, useState}from 'react'
 import AdBanner from './AdBanner'
 import axios from 'axios'
 import RecipeCard from './RecipeCard'
-import {AiOutlineSearch} from "react-icons/ai"
+import {BiSearchAlt2} from "react-icons/bi"
 
 const HomeScreen = () => {  
   const [recipes, setRecipes] = useState({})
+  const [search, setSearch] = useState("")
 
   const getRecipes = () => {
     axios.get("https://recipes.devmountain.com/recipes").then((result) => {
@@ -24,10 +25,12 @@ const HomeScreen = () => {
       <AdBanner />
       <div className='search-section'>
         <div className='search-bar-container'>
-          <AiOutlineSearch/>
+          <BiSearchAlt2 size="2em" color="#DA7635"/>
           <input 
             className='search-bar'
             type='text'
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
             placeholder='Search for a Recipe'
           />
         </div>
