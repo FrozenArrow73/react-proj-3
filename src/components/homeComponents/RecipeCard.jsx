@@ -1,6 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const RecipeCard = ({recipe}) => {
+    const navigate = useNavigate()
+
+    const handleClick = () => {
+        navigate(`/recipe/${recipe.recipe_id}`)
+    }
+
     return (
         <div className="recipe-card">
             <div style={{
@@ -14,7 +21,7 @@ const RecipeCard = ({recipe}) => {
             </div>
             <div className="recipe-card-values">
                 <p className="recipe-text">{recipe.recipe_name}</p>
-                <button>See More</button>
+                <button onClick={handleClick}>See More</button>
             </div>
         </div>
     )
