@@ -184,6 +184,7 @@ button {
 	box-shadow: #423f3f 0px 2px 5px;
 	padding-left: 20px;
 	padding-right: 20px;
+	padding-bottom: 20px;
 }
 
 .recipe-details {
@@ -193,6 +194,7 @@ button {
 	box-shadow: #423f3f 0px 2px 5px;
 	padding-left: 20px;
 	padding-right: 20px;
+	padding-bottom: 20px;
 }
 
 h2 {
