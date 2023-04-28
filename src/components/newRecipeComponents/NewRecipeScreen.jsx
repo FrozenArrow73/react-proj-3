@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import { useFormik } from "formik";
+import axios from "axios";
 
 const NewRecipeScreen = () => {
   const [ingredients, setIngredients] = useState([])
@@ -24,9 +25,11 @@ const NewRecipeScreen = () => {
     instructions: "",
 }
 
-const onSubmit = (values) => {
+const onSubmit = (values, {resetForm}) => {
   values.ingredients = ingredients
   console.log(values)
+  axios.post(`https://recipes.devmountain.com/recipes`, values)
+  resetForm()
 }
 
 const formik = useFormik({initialValues: initialValues, onSubmit: onSubmit})
