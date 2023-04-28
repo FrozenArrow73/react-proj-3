@@ -202,3 +202,73 @@ h2 {
 	font-size: 30px;
 	margin: 20px;
 }
+
+/* ------------------------------------------Form Page ---------------------------------------------- */
+.form-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	margin-top: 30px;
+	margin-bottom: 10px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	width: 400px;
+}
+
+.row {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+
+}
+.column {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	
+}
+.ingredient-list {
+	min-width: 160px;
+	min-height: 100px;
+}
+
+.form-label {
+	color: black;
+	font-size: 30px;
+	font-weight: 100;
+	text-align: center;
+}
+.row-1-input{
+height: 25px;
+}
+.row-2-input{
+height: 35px;
+width: 35px;
+}
+.row-2-label{
+font-size: 25px;
+}
+.row-3-input{
+	height: 25px;
+	width: 100px;
+}
+.row-4-input{
+	height: 25px;
+}
+
+.orange-btn {
+	background-color: #DA7635;
+}
+
+.text-area {
+	width: 400px;
+	resize: none;
+}
